@@ -8,20 +8,10 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/fluttermodule/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/fluttermodule/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/fluttermodule/build" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/build" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/example/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/example/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/example/build" />
-      <excludeFolder url="file://$MODULE_DIR$/flutterplugin/example/build/app/intermediates/flutter/debug/flutter_assets/packages" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
