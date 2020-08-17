@@ -47,6 +47,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String _platformVersion = 'Unknown';
+  String _appVersion = 'Unknown';
   int _counter = 0;
 
   @override
@@ -58,11 +59,17 @@ class _MyHomePageState extends State<MyHomePage> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     String platformVersion;
+    String appVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await Flutterplugin.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
+    }
+    try {
+      appVersion = await Flutterplugin.appVersion;
+    } on PlatformException {
+      appVersion = 'Failed to get app version.';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -72,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     setState(() {
       _platformVersion = platformVersion;
+      _appVersion = appVersion;
     });
   }
 
@@ -128,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             Text('Running on: $_platformVersion\n'),
+            Text('Running on: $_appVersion\n'),
           ],
         ),
       ),

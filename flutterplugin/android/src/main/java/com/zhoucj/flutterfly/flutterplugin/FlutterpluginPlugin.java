@@ -1,7 +1,6 @@
 package com.zhoucj.flutterfly.flutterplugin;
 
 import androidx.annotation.NonNull;
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -41,6 +40,8 @@ public class FlutterpluginPlugin implements FlutterPlugin, MethodCallHandler {
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
+    } if (call.method.equals("getAppVersion")) {
+      result.success(FlutterpluginService.getInstance().getAppVersion());
     } else {
       result.notImplemented();
     }

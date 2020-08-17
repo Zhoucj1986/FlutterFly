@@ -1,6 +1,9 @@
 package org.zhoucj.flutterfly;
 
 import android.app.Application;
+import android.content.pm.PackageInfo;
+
+import com.zhoucj.flutterfly.flutterplugin.FlutterpluginService;
 
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.embedding.engine.FlutterEngineCache;
@@ -24,5 +27,12 @@ public class MainApplication extends Application {
         flutterEngine.getDartExecutor().executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault());
         // Cache the FlutterEngine to be used by FlutterActivity or FlutterFragment.
         FlutterEngineCache.getInstance().put("my_engine_id", flutterEngine);
+
+        try {
+            PackageInfo pi = this.getPackageManager().getPackageInfo(this.getPackageName(), 0);
+            FlutterpluginService.getInstance().setAppVersion(pi.versionName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
