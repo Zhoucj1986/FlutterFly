@@ -124,5 +124,6 @@
     <orderEntry type="library" name="Gradle: androidx.constraintlayout:constraintlayout:1.1.3@aar" level="project" />
     <orderEntry type="module" module-name="flutter" />
     <orderEntry type="module" module-name="flutterplugin" />
+    <orderEntry type="module" module-name="flutter_boost" />
   </component>
 </module>

@@ -1,4 +1,4 @@
-include ':app', ':flutterplugin'
+include ':app', ':flutterplugin', ':flutter_boost'
 setBinding(new Binding([gradle: this]))
 evaluate(new File(
   settingsDir,

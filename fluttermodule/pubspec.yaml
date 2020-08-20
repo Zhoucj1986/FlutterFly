@@ -31,6 +31,11 @@ dependencies:
   flutterplugin:
     path: ../flutterplugin/
 
+  flutter_boost:
+    git:
+      url: 'https://github.com/alibaba/flutter_boost.git'
+      ref: 'v1.17.1-hotfixes'
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

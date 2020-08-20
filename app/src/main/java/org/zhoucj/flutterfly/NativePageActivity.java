@@ -4,16 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    public static WeakReference<MainActivity> sRef;
+public class NativePageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mOpenNative;
     private TextView mOpenFlutter;
@@ -22,8 +19,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sRef = new WeakReference<>(this);
 
         setContentView(R.layout.native_page);
 
@@ -37,24 +32,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        sRef.clear();
-        sRef = null;
-    }
-
-    @Override
     public void onClick(View v) {
         Map params = new HashMap();
-        params.put("test1", "v_test1");
-        params.put("test2", "v_test2");
-        //Add some params if needed.
+        params.put("test1","v_test1");
+        params.put("test2","v_test2");
+
         if (v == mOpenNative) {
-            PageRouter.openPageByUrl(this, PageRouter.NATIVE_PAGE_URL, params);
+            PageRouter.openPageByUrl(this, PageRouter.NATIVE_PAGE_URL,params);
         } else if (v == mOpenFlutter) {
-            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_PAGE_URL, params);
+            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_PAGE_URL,params);
         } else if (v == mOpenFlutterFragment) {
-            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_FRAGMENT_PAGE_URL, params);
+            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_FRAGMENT_PAGE_URL,params);
         }
     }
 }

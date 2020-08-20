@@ -28,4 +28,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation project(path: ':flutter')
     implementation project(path: ':flutterplugin')
+    implementation project(path: ':flutter_boost')
 }
